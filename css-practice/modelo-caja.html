@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modelo de cajas</title>
+
+    <style>
+        *{
+            font-family: sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .menu{
+            background-color: rgb(63, 105, 230);
+            padding: 10px 0;
+        }
+
+        .menu-nav{
+            list-style: none;
+            padding-left: 5px;
+            margin: 0;
+        }
+
+        .menu-nav__item{
+            display: inline-block;
+      
+        }
+ 
+        
+        .menu-nav__item a{
+            color: #fff;
+            text-decoration: none;
+        }
+
+        /* Seudo clases*/
+
+        .menu-nav__item a:hover{
+            color:salmon;
+        }
+
+        .menu-nav__item a:active{
+            color:seagreen;
+        }
+
+        /* Seudo elementos*/
+
+        .menu-nav__item a::after{
+            content: " | ";
+        }
+
+
+        /*Modelo de cajas*/
+
+        main{
+            width: 100%;
+            height: 300px;
+            border: 10px solid gray;
+            padding: 20px, 35px;
+        }
+</style>
+</head>
+<body>
+    
+    <header>
+
+        <nav class="menu">
+
+            <ul class="menu-nav">
+                <li class="menu-nav__item"><a href="">Inicio</a></li>
+                <li class="menu-nav__item"><a href="">Trabajos</a></li>
+                <li class="menu-nav__item"><a href="">Blosg</a></li>
+                <li class="menu-nav__item"><a href="">Contacto</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+        <section>
+            <h1>Hola mundo</h1>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe enim voluptate, quibusdam voluptatem iure iusto corrupti quasi quod illum, nostrum doloremque facilis, ullam necessitatibus a architecto. Dicta nulla atque quisquam! Unde laudantium quia culpa est, suscipit quis itaque exercitationem aut!</p>
+            <ul>
+                <li>Item</li>
+            </ul>
+        </section>
+    </main>
+</body>
+</html>

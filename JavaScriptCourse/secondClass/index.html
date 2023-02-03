@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>JS course</title>
+</head>
+<body>
+    <h1>JavaScript Course</h1>
+
+    <div id="wrapper">
+        <h3>Calculator</h3>
+
+        <label>V1</label>
+        <input id="v1">
+
+        <label>V2</label>
+        <input id="v2">
+        <button onclick="calcular()">Register</button>
+
+        <br>
+
+        <label >Total</label>
+        <input id="resultado">
+
+    </div>
+
+    <script>
+        const calcular = () => {
+            const v1 = document.getElementById("v1").value
+            const v2 = document.querySelector("#v2").value 
+
+            const valid1 = isNumber(v1)
+            const valid2 = isNumber(v2)
+            if(v1 == "") {
+                alert("Ingrese un numero")
+            } else if(v2 == "") {
+                alert("Ingrese un numero")
+            } else {
+                if(valid1 == false) {
+                alert("El valor v1 no es un numero")
+            } else if(valid2 == false) { 
+                alert("El valor v2 no es un numero")
+            } else {
+            const total = parseFloat(v1) + parseFloat(v2) 
+            console.log(v1, v2, total)
+            document.getElementById("resultado").value = total
+            }
+            }
+            
+        }
+
+        
+        function isNumber(num){
+            if(Number(num)) {
+                return true
+            } else { 
+                return false
+            }
+            console.log(Number(num))
+                
+        
+        }
+
+        function isNumber2(num) {
+            return (Number(num)) ? true : false
+        }
+
+    </script>
+</body>
+</html>

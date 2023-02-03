@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //Array 
+    var arr = [1, 2, "hola", null, undefined, "",  true, [3,7], 3.33, "JS", false];
+    console.log(arr)
+
+    //length
+    console.log("Longitud:", arr.length);
+
+    //for-in
+    for(var i in arr) {
+      console.log(i, arr[i]);
+    }
+
+    arr.forEach( function(elem, index) {
+      console.log(index, elem)
+    });
+
+    console.log("---------");
+    arr.push("Jose");
+
+    arr.forEach( function(elem, index) {
+      console.log(index, elem)
+    });
+
+    console.log("----ForEach-----");
+    arr.pop();
+    arr.forEach( function(elem, index) {
+      console.log(index, elem)
+    });
+
+    console.log("---- MAP ----");
+    const arr2 = arr.map((x) => {
+      if(typeof x == "number") {
+        return x * 2;
+      }
+    }).filter(Number)
+ 
+    console.log(arr2);
+
+    console.log("---- FILTER ----");
+    const arrayFilter = arr.filter((element ) => {
+      if(typeof element  == "number") {
+        return element * 2;
+      }
+    })
+
+    console.log(arrayFilter)
+    console.log("------------");
+
+
+    console.log("----SPLICE-----");
+    arr.splice(5,1);
+    console.log(arr);
+
+    console.log("---- IndexOf-----");
+    const hola_index = arr.indexOf('hola');
+    console.log(hola_index);
+    
+  </script>
+</body>
+</html>

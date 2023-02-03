@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>JS course</title>
+</head>
+<body>
+    <h1>JavaScript Course</h1>
+
+    <div id="wrapper">
+        <h3>Estudiantes</h3>
+
+        <label>Nomber</label>
+        <input type="text" id="name">
+
+        <label>Apellido</label>
+        <input type="text" id="lastname">
+        <button onclick="saludos()">Register</button>
+
+        <br>
+        <br>
+        <label id="fullName"></label>
+    </div>
+
+    <script>
+        const saludos = () => {
+            const name = document.getElementById("name").value
+            const lastName = document.querySelector("#lastname").value 
+            console.log(name)
+            console.log(lastName)
+            alert(`Hello ${name} ${lastName}`)
+            document.getElementById("fullName").innerHTML = `${name} ${lastName}`
+        }
+
+        /*
+            STRINGS 
+                //LENGTH
+            console.log(name.length)
+
+            //CHAR AT
+            console.log(name.charAt(1))
+
+            // LOWERCASE || UPPERCASE
+
+            console.log(name.toUpperCase())
+            console.log(name.toLowerCase())
+
+            //SUBSTRING 
+
+            console.log(name.substring(0,2))
+
+            var str = "Esta cadena , es     , muy, fastidioso   , de, escribir"
+            console.log(str.split(","))
+        */
+    </script>
+</body>
+</html>

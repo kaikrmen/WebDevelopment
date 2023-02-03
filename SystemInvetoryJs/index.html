@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles/main.css">
+    <title>Firts Project</title>
+</head>
+<body>
+    <h3 style="text-align: center;">Carmen Leon C.I: 27.969.902</h3>
+    <div class="container"> 
+            <h2 class="form-title" style="text-align: center;" >Sistema de inventario</h2>
+            <hr>   
+            <h4 class="form-title">Agregue un producto</h4>
+                <form class="form" onsubmit="createProduct(event)">
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label" for="name">Nombre</label>
+                            <input class="form-control" required="true"  placeholder="Nombre del Producto" id="nameProduct" autocomplete="off" />
+                    </div>
+                        <div class="col">
+                            <label class="form-label" for="code">Código</label>
+                            <input  class="form-control" onBlur="javascript:{this.value = this.value.toUpperCase(); }" required="true" onkeypress="upper();" placeholder="123456" id="code" autocomplete="off" />
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="code">Cantidad</label>
+                        <input  class="form-control" type="number" required="true" placeholder="123456" id="quantity" autocomplete="off" />
+                </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label class="form-label"  for="price">Precio</label>
+                            <input class="form-control" type="number" required="true" placeholder="$" id="price" autocomplete="off" />
+                        </div>
+                        <div class="col">
+                            <label class="form-label"  for="desc">Descuento</label>
+                            <input class="form-control" type="number" required="true" placeholder="%" id="desc" autocomplete="off" />
+                        </div>
+                        <div class="col">
+                            <label class="form-label">Categorias</label>
+                              <select id="categories" class="form-select">
+                                  <option value="Cereales">Cereales</option>
+                                  <option value="Golosinas">Golosinas</option>
+                                  <option value="Medicinas">Medicinas</option>
+                                  <option value="Limpieza">Limpieza</option>
+                              </select>
+                          </div>
+                          <div class="float-right" style="padding: 1rem;">
+                            <button class="btn btn-primary" type="submit">
+                                Agregar
+                            </button>
+                            <button class="btn btn-dark" type="button" id="clean"
+                               onclick="cancel()">
+                               Limpiar-Cancelar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+        
+            <div>
+                <hr>
+                <h2 class="form-title">Inventario</h2>
+                <td>
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col" id="index">Index</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Código</th>
+                            <th scope="col">Descuento</th>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Cantidad</th> 
+                            <th scope="col">Categoria</th>     
+                            <th scope="col"></th>                      
+                         </tr>
+                        </thead>
+                        <tbody id="listing"></tbody>
+                      </table>
+                    </td>
+            </div>
+
+
+                <div class="statistics">
+                    <div >
+                        <label>Total BRUTO USD</label>
+                        <input id="totalStock" value="0"  readonly />
+                        <label for="Ingrese la tasa de cambio en BsF"></label>
+                        <label>INGRESAR TASA DE CAMBIO BSF</label>
+                        <input type="number" placeholder="TASA DE CAMBIO BSF" id="bsf" />
+                        <button class="btn btn-dark" onclick="changeUSDToBS()">Calcular</button></br>
+                        <label>Total BRUTO Bsf</label>
+                        <input id="totalbrutobsf"  value="0" readonly />
+                    </div>
+                    <div >
+                        <label>Total NETO USD</label>
+                        <input id="totalStockNeto" value="0"  readonly />
+                        <label for="Ingrese la tasa de cambio en BsF"></label>
+                        <label>INGRESAR TASA DE CAMBIO BSF</label>
+                        <input type="number" placeholder="TASA DE CAMBIO BSF" id="bsfNeto" />
+                        <button class="btn btn-dark" onclick="changeNeto()">Calcular</button></br>
+                        <label>Total NETO Bsf</label>
+                        <input id="totalnetobsf"  value="0" readonly />
+                    </div>
+                    <hr>
+                    <div>
+                        <label>Cantidad de Productos</label>
+                        <input id="quantity-products" value="0"  readonly/>
+                    </div>
+                    <div>
+                        <label>Total de productos con descuentos</label>
+                        <input id="desc-products" value="0"  readonly />
+                    </div>
+                    <div>
+                        <div>
+                        <label>Total de productos de medicinas</label>
+                        <input id="product-medicine" value="0" readonly/>
+                    </div>
+                    <div>
+                        <label>Total de productos de limpieza</label>
+                        <input id="product-cleaning" value="0"  readonly/>
+                    </div>
+                    <div>
+                        <label>Total de productos de golosinas</label>
+                        <input id="product-groseries" value="0" readonly/>
+                    </div>
+                    <div>
+                        <label>Total de productos de cereales</label>
+                        <input id="product-cereals" value="0"  readonly/>
+                     </div>
+                   <div>
+                      <label >Total de productos</label>
+                      <input id="total-products" value="0"  readonly />
+                      </div>
+                    </div> 
+                </div>
+        </div>
+    <script src="jsfiles/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //JSON
+
+    /* 
+      <?xml version="1.0" encoding="UTF-8"?>
+      <root>
+        <address>
+          <city>Maracaibo</city>
+          <coors>
+            <lat>0</lat>
+            <lng>0</lng>
+          </coors>
+          <country>Canada</country>
+          <state>Florida</state>
+        </address>
+        <age>29</age>
+        <cars>
+          <element>R8</element>
+          <element>Tesla</element>
+        </cars>
+        <colors>
+          <element>white</element>
+          <element>black</element>
+        </colors>
+        <id>123456</id>
+        <lastName>Medina</lastName>
+        <name>Andres</name>
+      </root>
+    */
+    
+    var json = {
+      "name": "Andres",
+      "lastName": "Medina",
+      "age": 29,
+      "colors": ["white", "black"],
+      "cars": ["R8", "Tesla"],
+      "id": "123456",
+      "address": {
+        "country": "Canada",
+        "state": "Florida",
+        "city": "Maracaibo",
+        "coors": {
+          "lat": 0,
+          "lng": 0
+        }
+      }
+    }
+
+    //LECTURA
+    console.log(json.name);
+    console.log(json.age);
+    console.log(json.address.country);
+    console.log(json.colors);
+    console.log(json.id);
+    
+    const data = json.colors;
+    data.forEach( (x) => {
+      console.log(x);
+    });
+
+    //EDITAR
+    json["id"] = "20967";
+    json.name = "Jose";
+    console.log(json);
+
+    //INSERTAR NUEVO VALOR
+    json["school"] = "URBE";
+    console.log(json);
+
+    //ELIMINAR
+    delete json["id"];
+    console.log(json);
+
+
+</script>
+</body>
+</html>

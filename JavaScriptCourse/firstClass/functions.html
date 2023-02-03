@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+  //Functions
+  
+  //function declare
+
+  function saludos(text, anotherText) {
+    console.log(`Hey you, ${text} ${anotherText}`)
+  }
+
+  saludos("Fuck off", "I'm kidding or not")
+  saludos("I love you", "or maybe not")
+  saludos("Steve, I love you", "hahaha")
+
+  var x = 2 // Puede ser definido en cualquier momento
+  let y = "Hola" // Se restauura el valor original 
+  const id = 123  // No permite cambios
+
+  console.log("=====================")
+  //functions expression 
+
+  const square = function(x) {
+    let math = x * x
+    return math
+  }
+  
+  console.log(square(5))
+  console.log(square(3))
+  console.log(square(4))
+  console.log("=====================")
+
+  //Arrow function 
+
+  const arrowFunction = (x) => {
+    let math = x * x
+    return math
+  }
+
+console.log(square(2))
+
+</script>
+</body>
+</html>
